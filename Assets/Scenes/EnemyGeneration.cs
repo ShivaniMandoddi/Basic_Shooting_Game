@@ -18,7 +18,7 @@ public class EnemyGeneration : MonoBehaviour
         time = time + Time.deltaTime;
         if(time>=4f)
         {
-            //print("Enemy generated");
+            print("Enemy generated");
             Vector3 randomPosition = GetPosition();
             Instantiate(enemyPrefab,randomPosition,Quaternion.identity);
             time = 0f;
