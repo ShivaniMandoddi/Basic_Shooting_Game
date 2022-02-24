@@ -12,12 +12,7 @@ public class BulletLauncher : MonoBehaviour
     public int score;
     public float checkTime;
    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
