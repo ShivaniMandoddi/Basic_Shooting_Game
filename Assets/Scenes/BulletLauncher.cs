@@ -8,7 +8,8 @@ public class BulletLauncher : MonoBehaviour
     public GameObject bulletPrefab;
     Rigidbody rb;
     public float speed;
-
+    public int score;
+   
     void Start()
     {
         
@@ -27,6 +28,8 @@ public class BulletLauncher : MonoBehaviour
             rb.velocity=Camera.main.transform.rotation* (Vector3.forward * speed);
             
         }
+      
 
     }
+  
 }
