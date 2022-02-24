@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BulletLauncher : MonoBehaviour
 {
@@ -33,7 +34,10 @@ public class BulletLauncher : MonoBehaviour
         if (score == 10 && checkTime <= 60f)
             Debug.Log("Player is the Winner");
         else if (score < 10 && checkTime > 60f)
+        {
             Debug.Log("GameOver! \n Player loss the game");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
     }
   
