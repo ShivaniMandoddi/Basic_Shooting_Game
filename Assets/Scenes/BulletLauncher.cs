@@ -30,12 +30,15 @@ public class BulletLauncher : MonoBehaviour
             rb.velocity=Camera.main.transform.rotation* (Vector3.forward * speed);
             
         }
+        // Win Condition Checking
         checkTime = checkTime + Time.deltaTime;
-        if (score == 10 && checkTime <= 60f)
+        if (score == 10 && checkTime < 60f)
             Debug.Log("Player is the Winner");
-        else if (checkTime > 60f)
-        {
+        else if(score<10 && checkTime>60f)
             Debug.Log("GameOver! \n Player loss the game");
+        if (checkTime > 60f)
+        {
+         
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
