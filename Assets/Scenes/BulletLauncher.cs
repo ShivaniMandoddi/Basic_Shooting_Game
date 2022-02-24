@@ -9,6 +9,7 @@ public class BulletLauncher : MonoBehaviour
     Rigidbody rb;
     public float speed;
     public int score;
+    public float checkTime;
    
     void Start()
     {
@@ -28,7 +29,11 @@ public class BulletLauncher : MonoBehaviour
             rb.velocity=Camera.main.transform.rotation* (Vector3.forward * speed);
             
         }
-      
+        checkTime = checkTime + Time.deltaTime;
+        if (score == 10 && checkTime <= 60f)
+            Debug.Log("Player is the Winner");
+        else if (score < 10 && checkTime > 60f)
+            Debug.Log("GameOver! \n Player loss the game");
 
     }
   
