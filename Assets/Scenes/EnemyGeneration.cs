@@ -6,9 +6,7 @@ public class EnemyGeneration : MonoBehaviour
 {
     float time=0f;
     public GameObject enemyPrefab;
-    // Start is called before the first frame update
   
-    // Update is called once per frame
     void Update()
     {
         time = time + Time.deltaTime;
@@ -16,13 +14,13 @@ public class EnemyGeneration : MonoBehaviour
         {
             //print("Enemy generated");
             Vector3 randomPosition = GetPosition();
-            Instantiate(enemyPrefab,randomPosition,Quaternion.identity);
+            Instantiate(enemyPrefab,randomPosition,Quaternion.identity); // Generating Enemies
             time = 0f;
         }
     }
     public Vector3 GetPosition()
     { 
-        return new Vector3(Random.Range(-12,12),Random.Range(1,4),Random.Range(-11,14));
+        return new Vector3(Random.Range(Random.Range(-12,-2),Random.Range(2,12)),Random.Range(2,3),Random.Range(Random.Range(-11,2),Random.Range(2,14)));
     }
    
 }

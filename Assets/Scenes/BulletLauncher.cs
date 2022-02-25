@@ -17,7 +17,7 @@ public class BulletLauncher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject tempBullet=Instantiate(bulletPrefab, transform.position,Quaternion.identity);
+            GameObject tempBullet=Instantiate(bulletPrefab, transform.position,Quaternion.identity); // Instantiating Bullets
  
             rb = tempBullet.GetComponent<Rigidbody>();
             tempBullet.transform.position = transform.position;
@@ -26,6 +26,7 @@ public class BulletLauncher : MonoBehaviour
             
         }
         // Win Condition Checking
+        // Game will end in 1 minute
         checkTime = checkTime + Time.deltaTime;
         if (score == 10 && checkTime < 60f)
             Debug.Log("Player is the Winner");
@@ -34,7 +35,7 @@ public class BulletLauncher : MonoBehaviour
         if (checkTime > 60f)
         {
          
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Loading the scene after game ends.
         }
 
     }
